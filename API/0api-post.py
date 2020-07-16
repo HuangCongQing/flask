@@ -4,8 +4,12 @@
 @Company(School): UCAS
 @Date: 2020-07-16 00:38:08
 @LastEditors: HCQ
-@LastEditTime: 2020-07-16 12:58:05
+@LastEditTime: 2020-07-16 13:22:49
 '''
+# https://blog.csdn.net/t8116189520/article/details/81874309
+# post 需要传参
+
+
 from flask import Flask, g
 from flask_restful import reqparse, Api, Resource
 from flask_httpauth import HTTPTokenAuth
@@ -37,7 +41,7 @@ class TodoList(Resource):
         # 调用方法to_do
         info = {"info": to_do(user, pwd)}
  
-        # 资源添加成功，返回201
+        # 资源添加成功，返回201 
         return info, 201
  
  
