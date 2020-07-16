@@ -4,8 +4,9 @@
 @Company(School): UCAS
 @Date: 2020-07-16 00:18:32
 @LastEditors: HCQ
-@LastEditTime: 2020-07-16 13:49:03
+@LastEditTime: 2020-07-16 16:17:49
 '''
+# 参考：https://cloud.tencent.com/developer/article/1644775
 import time
 from flask import Flask,request, jsonify, make_response
 from flask_cors import CORS
@@ -15,7 +16,7 @@ from marshmallow_sqlalchemy import ModelSchema
 from marshmallow import fields
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URL'] = 'mysql+pymysql://root:123456@127.0.0.1:123456/test'
+app.config['SQLALCHEMY_DATABASE_URL'] = 'mysql+pymysql://root:123456@127.0.0.1:3306/flaskdb'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///books.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
@@ -98,3 +99,7 @@ def delete_author_by_id(id):
 @app.route('/time')
 def get_current_time():
     return {'time': time.time()}
+
+if __name__ == '__main__':
+    app.debug = True
+    app.run(port=9000)
