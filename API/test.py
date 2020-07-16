@@ -4,7 +4,7 @@
 @Company(School): UCAS
 @Date: 2020-07-16 00:40:02
 @LastEditors: HCQ
-@LastEditTime: 2020-07-16 00:40:02
+@LastEditTime: 2020-07-16 12:50:22
 '''
 import requests
 import json
@@ -24,6 +24,7 @@ headers = {
  
 res = requests.post(url, data=parms,headers=headers)  # 发送请求
  
+# 获得res数据
  
 text = res.text
 print(json.loads(text))

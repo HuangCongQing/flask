@@ -4,8 +4,9 @@
 @Company(School): UCAS
 @Date: 2020-07-15 23:39:33
 @LastEditors: HCQ
-@LastEditTime: 2020-07-16 12:03:51
+@LastEditTime: 2020-07-16 12:48:49
 '''
+# 如何使用模板render_template
 from flask import Flask
 from flask import render_template
 
@@ -13,8 +14,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    # return render_template('hello.html') # 导入html
-    return tip1() # 导入html
+    return render_template('hello.html') # 导入html
+    # return tip1() # 导入html
 
 
 @app.route('/tip1')
